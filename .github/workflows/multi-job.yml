@@ -4,6 +4,15 @@ name: Multi-Job Workflow
 on: [push]
 
 jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: AWS Sustainability Scanner GitHub Action
+      # You may pin to the exact commit or the version.
+      # uses: aws-actions/sustainability-scanner@af96153806024859a75e721a2e20a285040ee891
+        uses: aws-actions/sustainability-scanner@v1
+      
   ubuntu:
     runs-on: ubuntu-latest
     steps:
